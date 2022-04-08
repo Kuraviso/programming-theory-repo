@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2549179548671820845}
   - component: {fileID: 2549179548674705009}
   - component: {fileID: 2549179548673834203}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SK_Veh_Small_Heli_Rotor_Tail_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,9 +93,11 @@ GameObject:
   - component: {fileID: 2549179548674765007}
   - component: {fileID: 2549179548673804315}
   - component: {fileID: 7027712628602250213}
-  m_Layer: 0
+  - component: {fileID: -3927270763273582106}
+  - component: {fileID: 825118011669061333}
+  m_Layer: 6
   m_Name: Hellicopter
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,10 +111,11 @@ Transform:
   m_GameObject: {fileID: 2549179548671549769}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 12.900001, y: 0, z: 33.5}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 2549179548671827121}
   - {fileID: 2549179548671820845}
+  - {fileID: 6987453755932026709}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
@@ -178,6 +181,36 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAlive: 1
+  helicopterSpawnPos: {x: 0, y: 0, z: 0}
+--- !u!65 &-3927270763273582106
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549179548671549769}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.5147252, y: 4.480703, z: 14.667833}
+  m_Center: {x: 0.00001424551, y: 2.2403514, z: -3.7978327}
+--- !u!54 &825118011669061333
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549179548671549769}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &2549179548671603025
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +222,8 @@ GameObject:
   - component: {fileID: 2549179548671827121}
   - component: {fileID: 2549179548674784475}
   - component: {fileID: 2549179548673732445}
-  m_Layer: 0
+  - component: {fileID: 465597684}
+  m_Layer: 6
   m_Name: SK_Veh_Small_Heli_Rotor_Main_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -203,13 +237,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2549179548671603025}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1913873e-15, y: 4.249937, z: -0.74411315}
+  m_LocalRotation: {x: -0, y: -0.08901442, z: -0, w: 0.9960304}
+  m_LocalPosition: {x: 0, y: 4.249936, z: -0.74411386}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2549179548671927495}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -10.214, z: 0}
 --- !u!33 &2549179548674784475
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -259,3 +293,45 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &465597684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549179548671603025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ebbf254458b32e4cb288d6cf3739326, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &4685179200698701024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6987453755932026709}
+  m_Layer: 0
+  m_Name: MissileOffsetH
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6987453755932026709
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4685179200698701024}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalPosition: {x: 0.04, y: 1.18, z: 4.76}
+  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
+  m_Children: []
+  m_Father: {fileID: 2549179548671927495}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -8,6 +8,8 @@ public class EnemyController : MonoBehaviour
     protected float enemySpeed;
     protected float enemyFireRate;
     protected float bottomBound = -60f;
+    protected Vector3 enemyMisileOffset;
+
 
     // method to rotate down the enemy prefabs so i dont have to do it manually xD
     public void rotateDown()
@@ -32,12 +34,14 @@ public class EnemyController : MonoBehaviour
         GameObject misile = ObjectPooler.SharedInstance.GetPooledObject();
         if (misile != null)
         {
-            misile.transform.position = transform.position;
+            misile.transform.position = transform.position - enemyMisileOffset;
             misile.transform.rotation = transform.rotation;
             misile.SetActive(true);
         }
 
     }
+
+
 
     public virtual void DestroyEnemy()
     {

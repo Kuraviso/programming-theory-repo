@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Fighter : PlayerController
 {
-    private Vector3 fighterMisileOffset = new Vector3(5f, 0f, 1f);
+
+
+
+    private Vector3 fighterMisileOffset = new Vector3(5f, 0f, 5f);
 
     // Start is called before the first frame update
     void Start()
     {
+        ;
         // setting the variables for the parent class.
         playerSpeed = 100;
         playerMisileOffset = fighterMisileOffset;
@@ -20,6 +24,7 @@ public class Fighter : PlayerController
         // call the methods to move the player
         CharacterMovement();
 
+
         // if space is pressed then shoot misiles.
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -28,4 +33,7 @@ public class Fighter : PlayerController
         }
 
     }
+
+
+
 }

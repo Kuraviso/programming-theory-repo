@@ -7,13 +7,23 @@ public class EnemyHelicopter : EnemyController
     private float fireRate;
     private float helicopterSpeed = 50f;
     public bool isAlive;
+    public Vector3 helicopterSpawnPos;
+
 
     // Start is called before the first frame update
     void Start()
+
+
     {
+
+        enemyMisileOffset = new Vector3(0f, 0f, 10f);
+        helicopterSpawnPos = new Vector3(Random.Range(-100f, 80), 0, 115);
+
+
         // set the enemy isAlive variable to use the loop 
         isAlive = true;
         enemySpeed = helicopterSpeed;
+
         // rotate down the enemy so i dont have to do it myself, and start the coroutine to shoot misiles.
         rotateDown();
         StartCoroutine("HelicopterShootMisiles");
@@ -48,7 +58,10 @@ public class EnemyHelicopter : EnemyController
             isAlive = false;
             Destroy(gameObject);
 
+
         }
 
     }
+
+
 }

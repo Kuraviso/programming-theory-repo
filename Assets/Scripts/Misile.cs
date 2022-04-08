@@ -5,7 +5,7 @@ using UnityEngine;
 public class Misile : MonoBehaviour
 {
 
-    private float misileSpeed = 100;
+    private float misileSpeed = 200;
     private float misileRangeP = 125;
     private float misileRangeN = -60;
 
@@ -35,6 +35,16 @@ public class Misile : MonoBehaviour
         }
 
 
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Fighter"))
+        {
+            Destroy(collision.gameObject);
+            gameObject.SetActive(false);
+
+        }
     }
 
 }
