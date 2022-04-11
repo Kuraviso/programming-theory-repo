@@ -9,7 +9,7 @@ public class EnemyController : MonoBehaviour
     protected float enemyFireRate;
     protected float bottomBound = -60f;
     protected Vector3 enemyMisileOffset;
-
+    public int points;
 
     // method to rotate down the enemy prefabs so i dont have to do it manually xD
     public void rotateDown()
