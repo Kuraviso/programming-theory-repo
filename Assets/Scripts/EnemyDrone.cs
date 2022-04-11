@@ -29,6 +29,9 @@ public class EnemyDrone : EnemyController
             transform.LookAt(player.transform.position);
             enemyRb.AddForce((player.transform.position - transform.position).normalized * droneSpeed);
         }
+        else
+
+            Destroy(gameObject);
 
 
     }

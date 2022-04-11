@@ -43,6 +43,14 @@ public class Fighter : PlayerController
 
 
         }
+        else if (collision.gameObject.CompareTag("Misile"))
+        {
+            collision.gameObject.SetActive(false);
+            Destroy(gameObject);
+            GameOver();
+
+
+        }
 
     }
 
