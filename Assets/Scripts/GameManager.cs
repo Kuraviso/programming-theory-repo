@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
     {
 
         GameRestart();
-
+        scoreText.text = $"Score: {player.score}";
 
     }
 

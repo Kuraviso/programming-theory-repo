@@ -6,6 +6,7 @@ public class Fighter : PlayerController
 {
 
 
+    private AudioSource misileSound;
 
     private Vector3 fighterMisileOffset = new Vector3(5f, 0f, 5f);
 
@@ -13,6 +14,8 @@ public class Fighter : PlayerController
     void Start()
     {
         isAlive = true;
+
+        misileSound = GetComponent<AudioSource>();
         // setting the variables for the parent class.
         playerSpeed = 100;
         playerMisileOffset = fighterMisileOffset;
@@ -29,14 +32,17 @@ public class Fighter : PlayerController
         if (Input.GetKeyDown(KeyCode.Space) && isAlive)
         {
             ShootMisiles();
+            misileSound.PlayOneShot(misileSound.clip, 1f);
 
         }
 
     }
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Ally"))
         {
+
+            Instantiate(explosionParticle, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
             Destroy(gameObject);
             GameOver();
@@ -45,6 +51,9 @@ public class Fighter : PlayerController
         }
         else if (collision.gameObject.CompareTag("Misile"))
         {
+
+
+            Instantiate(explosionParticle, transform.position, Quaternion.identity);
             collision.gameObject.SetActive(false);
             Destroy(gameObject);
             GameOver();

@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 1911125548}
   m_Layer: 6
   m_Name: PassengerPlane
-  m_TagString: Enemy
+  m_TagString: Ally
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,6 +132,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1f44349d7abe9546b1c343deefb507a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  points: 0
 --- !u!65 &5341730218070463952
 BoxCollider:
   m_ObjectHideFlags: 0

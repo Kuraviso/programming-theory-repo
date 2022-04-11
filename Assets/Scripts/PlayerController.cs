@@ -16,8 +16,10 @@ public class PlayerController : MonoBehaviour
     private float bottomBound = -27.5f;
     private float leftBound = -120;
     private float rightBound = 92;
+    public ParticleSystem explosionParticle;
 
     public bool isAlive;
+    public int score;
 
     private Vector3 fighterOffsetPos = new Vector3(5, 0.5f, 20);
     private Vector3 fighterOffsetNeg = new Vector3(-5, 0.5f, 20);
@@ -98,6 +100,14 @@ public class PlayerController : MonoBehaviour
     public void GameOver()
     {
         isAlive = false;
+
+
+    }
+
+    public void AddScore(int points)
+    {
+
+        score += points;
 
     }
 

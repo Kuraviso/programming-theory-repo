@@ -11,6 +11,7 @@ public class EnemyController : MonoBehaviour
     protected Vector3 enemyMisileOffset;
     public int points;
 
+
     // method to rotate down the enemy prefabs so i dont have to do it manually xD
     public void rotateDown()
     {
@@ -46,8 +47,11 @@ public class EnemyController : MonoBehaviour
     public virtual void DestroyEnemy()
     {
 
+
         Destroy(gameObject);
+
     }
+
 
 
 }

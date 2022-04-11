@@ -8,11 +8,18 @@ public class Misile : MonoBehaviour
     private float misileSpeed = 200;
     private float misileRangeP = 125;
     private float misileRangeN = -60;
+    [SerializeField] GameObject playerGo;
+    private PlayerController playerScript;
+    [SerializeField] ParticleSystem explosion;
 
 
-    void Start()
+
+    private void Start()
     {
-
+        if (playerGo != null)
+        {
+            playerScript = GameObject.Find("Fighter").GetComponent<PlayerController>();
+        }
     }
 
     // Update is called once per frame
@@ -41,8 +48,19 @@ public class Misile : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
+            Instantiate(explosion, collision.transform.position, Quaternion.identity);
+            playerScript.score += 50;
             Destroy(collision.gameObject);
             gameObject.SetActive(false);
+
+        }
+        else if (collision.gameObject.CompareTag("Ally"))
+        {
+            Instantiate(explosion, collision.transform.position, Quaternion.identity);
+            playerScript.score -= 100;
+            Destroy(collision.gameObject);
+            gameObject.SetActive(false);
+
 
         }
     }
