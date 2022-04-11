@@ -23,9 +23,12 @@ public class EnemyDrone : EnemyController
     // Update is called once per frame
     void Update()
     {
+        if (player != null)
+        {
 
-        transform.LookAt(player.transform.position);
-        enemyRb.AddForce((player.transform.position - transform.position).normalized * droneSpeed);
+            transform.LookAt(player.transform.position);
+            enemyRb.AddForce((player.transform.position - transform.position).normalized * droneSpeed);
+        }
 
 
     }

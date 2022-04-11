@@ -11,16 +11,23 @@ public class EnemySpawner : MonoBehaviour
     private Vector3 spawnPosBoolRight;
     private Vector3 spawnPosBoolLeft;
     [SerializeField] private List<GameObject> enemies;
+    private GameObject player;
 
 
 
     void Start()
     {
 
-
-        // set the loop value to true and start the coroutine.
         isGameActive = true;
+        player = GameObject.Find("Fighter");
+        // set the loop value to true and start the coroutine.
         StartCoroutine(SpawnTarget());
+
+
+    }
+
+    private void Update()
+    {
 
 
     }
@@ -28,7 +35,9 @@ public class EnemySpawner : MonoBehaviour
     // enemy spawner loop with condition.
     IEnumerator SpawnTarget()
     {
-        while (isGameActive)
+
+
+        while (isGameActive && player != null)
         {
             spawnRate = Random.Range(0.5f, 2);
             yield return new WaitForSeconds(spawnRate);
@@ -68,11 +77,6 @@ public class EnemySpawner : MonoBehaviour
 
     }
 
-    // if the player is dead stop spawning enemies.
-    public void GameOver()
-    {
-        isGameActive = false;
 
-    }
 
 }

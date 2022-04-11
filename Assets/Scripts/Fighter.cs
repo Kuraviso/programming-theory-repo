@@ -12,7 +12,7 @@ public class Fighter : PlayerController
     // Start is called before the first frame update
     void Start()
     {
-        ;
+        isAlive = true;
         // setting the variables for the parent class.
         playerSpeed = 100;
         playerMisileOffset = fighterMisileOffset;
@@ -26,9 +26,21 @@ public class Fighter : PlayerController
 
 
         // if space is pressed then shoot misiles.
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && isAlive)
         {
             ShootMisiles();
+
+        }
+
+    }
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+            GameOver();
+
 
         }
 

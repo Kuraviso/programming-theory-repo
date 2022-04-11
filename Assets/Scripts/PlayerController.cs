@@ -12,11 +12,17 @@ public class PlayerController : MonoBehaviour
     private float bottomBound = -27.5f;
     private float leftBound = -120;
     private float rightBound = 92;
+    public bool isAlive;
 
 
 
     private float horizontalInput;
     private float verticalInput;
+
+    private void Start()
+    {
+
+    }
 
 
 
@@ -78,13 +84,11 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void OnCollisionEnter(Collision collision)
+
+
+    public void GameOver()
     {
-        if (collision.gameObject.CompareTag("Enemy"))
-        {
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
-        }
+        isAlive = false;
 
     }
 
