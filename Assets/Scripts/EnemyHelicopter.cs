@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyHelicopter : EnemyController
 {
+    
     private float fireRate;
     private float helicopterSpeed = 50f;
     public bool isAlive;
@@ -16,7 +17,7 @@ public class EnemyHelicopter : EnemyController
 
     {
 
-        enemyMisileOffset = new Vector3(0f, 0f, 10f);
+        enemyMisileOffset = new Vector3(0f, 0f, 15f);
         helicopterSpawnPos = new Vector3(Random.Range(-100f, 80), 0, 115);
 
 

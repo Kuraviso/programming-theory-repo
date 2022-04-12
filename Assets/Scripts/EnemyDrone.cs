@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyDrone : EnemyController
 {
-    private float droneSpeed = 20f;
+    private float droneSpeed = 35f;
     private Rigidbody enemyRb;
     private GameObject player;
 
