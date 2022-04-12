@@ -9,8 +9,8 @@ public class Misile : MonoBehaviour
     private float misileRangeP = 125;
     private float misileRangeN = -60;
     [SerializeField] GameObject playerGo;
-    private PlayerController playerScript;
     [SerializeField] ParticleSystem explosion;
+    private PlayerController playerScript;
 
 
 
