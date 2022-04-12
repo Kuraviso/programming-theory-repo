@@ -24,7 +24,7 @@ public class PassengerPlane : EnemyController
         DestroyEnemy();
 
     }
-
+    //POLYMORPHISM
     public override void DestroyEnemy()
     {
         if (transform.position.z < bottomBound)

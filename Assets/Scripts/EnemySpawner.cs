@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
+    //ENCAPSULATION
     private float spawnRate;
     public bool isGameActive;
     private Vector3 spawnPos;

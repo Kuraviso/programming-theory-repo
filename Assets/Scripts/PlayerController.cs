@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
-
+    //ENCAPSULATION2
     protected int playerLives;
     protected float playerSpeed;
     protected float playerFireRate;
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-
+    //ABSTRACTION
     public void CharacterMovement()
     {
 
